@@ -1,0 +1,91 @@
+
+        header {
+            background-color: darkred;
+            margin-bottom: 10px;
+            color: white;
+            padding: 5px;
+
+        }
+
+body {background-color: whitesmoke;
+        color: black;
+        font-family: fantasy;
+    text-align: center
+        }
+
+
+        footer {
+            background-color: darkred;
+            padding: 10px;
+            margin: 20px;
+            color: white
+        }
+
+
+        form {
+                background-color: lightgrey;
+                padding: 15px;
+                border: 2px solid black;
+
+            }
+
+        input {
+  width: 100%;
+  padding: 5px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+              }
+
+
+
+a {
+  color: skyblue
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+table {
+    border-bottom: 1px solid black;
+}
+
+tbody {
+    font-family: sans-serif;
+}
+tr{
+    border: 1px solid black;
+
+#userinfo {color: blueviolet;
+    font-size: bold;
+    font-family:monospace;
+border: black solid 3px;
+padding: 5px;
+}
+
+.button {
+    border: 5px solid lightgreen;
+    width:50%;
+    text-align: center;
+    font-weight: bold;
+}
+
+        .button:hover{
+            background-color:darkgrey;
+            color: white;
+        }
+
+
+input {
+    width: 150%;
+    padding: 2px;
+  margin: 4px 0;
+}
