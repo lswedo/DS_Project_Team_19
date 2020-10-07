@@ -7,6 +7,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+      type="image/png"
+      href="Images/ocfr_favicon.png">
 
 </head>
 <body>
@@ -38,23 +41,13 @@
              </div>
         </nav>
 
-        <main class = "row">
-
-            <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12 " >
-                <h5> Username <textarea id="username" name="username" rows="1" cols="10">
-                    type here
-                    </textarea> <br> <br>
-                Password <textarea id="password" name="password" rows="1" cols="10">
-                    type here
-                    </textarea></h5>
-
-
-
-            </div>
-
-
-
-        </main>
+        <form class="form-signin" style="background-color: whitesmoke; width: 35%; margin: auto;">
+          <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+          <input type="text" id="user_name" class="form-control" placeholder="User Name" required="" autofocus="">
+          <label for="Password" class="sr-only">Password</label>
+          <input type="password" id="Password" class="form-control" placeholder="Password" required="">
+          <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 35%; margin: auto;" type="submit">Sign in</button>
+        </form>
 
       <footer class = "row">
             <div class="container">
