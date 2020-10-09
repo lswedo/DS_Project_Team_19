@@ -58,11 +58,19 @@ table {
     border-bottom: 1px solid black;
 }
 
+
+
+
+
+
 tbody {
     font-family: sans-serif;
 }
-tr{
-    border: 1px solid black;
+/*tr{
+    border: 1px solid black;}*/
+
+tr:hover {
+  background-color:lightgrey}
 
 #userinfo {color: blueviolet;
     font-size: bold;
