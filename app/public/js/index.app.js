@@ -11,11 +11,12 @@ var app = new Vue({
     newPtForm: {}
   },
   methods: {
-    newPtData() {
-      return {
-        firstName: "",
-        lastName: "",
-        dob: "",
-        sexAtBirth: ""
-      }
+    created() {
+   fetch("api/records/")
+   .then( response => response.json() )
+   .then( json => {
+     this.ptList = json;
+
+     console.log(json)}
+   );
 })
