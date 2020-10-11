@@ -1,90 +1,71 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <title>Welcome!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon"
-      type="image/png"
-      href="Images/ocfr_favicon.png">
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="icon"
+        type="image/png"
+        href="Images/ocfr_favicon.png">
+  </head>
+  <body>
+    <div class = "container">
+      <header class = "row">
+        <div class = "col-xs-12 col-sm-6 col-med-4 col-lg-3">
+             <img src="Images/OCFR%20Logo.PNG" class = "img-responsive" width = 200 alt = "Logo">
+        </div>
+        <div class = "col-xs-12 col-sm-6 col-med-8 col-lg-9">
 
-</head>
-<body>
-
-
-        <div class = "container">
-        <header class = "row">
-            <div class = "col-xs-12 col-sm-6 col-med-4 col-lg-3">
-                 <img src="Images/OCFR%20Logo.PNG" class = "img-responsive" width = 200 alt = "Logo">
-            </div>
-            <div class = "col-xs-12 col-sm-6 col-med-8 col-lg-9">
-
-            </div>
-        </header>
-
+        </div>
+      </header>
         <nav class = "row navbar navbar-default">
-            <div class = "navbar-header">
-                <button class = "navbar-toggle" data-toggle="collapse" data-target = "#myMenu">Menu </button></div>
-
-                <div class = "collapse navbar-collapse" id="myMenu">
-                <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="firefighters.html">Firefighters</a></li>
-                <li><a href="reports.html">Reports</a></li>
-                <li><a href="login.html">Login</a></li>
-
-                </ul>
-             </div>
+          <div class = "navbar-header">
+            <button class = "navbar-toggle" data-toggle="collapse" data-target = "#myMenu">Menu </button>
+          </div>
+          <div class = "collapse navbar-collapse" id="myMenu">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="certifications.html">Certifications</a></li>
+              <li><a href="firefighters.html">Firefighters</a></li>
+              <li><a href="reports.html">Reports</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
         </nav>
 
-        <main class = "row">
-
-            <div>
-
-                <table class="table">
-  <thead class="heading">
-    <tr>
-      <th scope="col">Certification ID</th>
-      <th scope="col">Agengy</th>
-      <th scope="col">Certification Title</th>
-      <th scope="col">Expiration Period</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <div class="" v-for="pt in ptList"
-      <tr>
-        <th scope="row">111</th>
-        <td>ABC Agengy</td>
-        <td>CPR</td>
-        <td>Tomorrow</td>
-      </tr>
-    </div>
-  </tbody>
-</table>
-
-
-
-            </div>
-
-
-
-        </main>
+      <main class = "row">
+        <table class="table" id=OCFR_tables>
+          <thead class="heading">
+            <tr>
+              <th scope="col">Certification ID</th>
+              <th scope="col">Agengy</th>
+              <th scope="col">Certification Title</th>
+              <th scope="col">Expiration Period</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr v-for="cert in certList">
+                <th scope="row">{{cert.CertId}}</th>
+                <td>{{cert.CertifyAgency}}</td>
+                <td>{{cert.CertName}}</td>
+                <td>{{cert.ExpPeriod}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </main>
 
       <footer class = "row">
-            <div class="container">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <span class="align-bottom">Team 19 | MSIS Kelley School of Business</span>
-                </div>
-            </div>
-        </footer>
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/index.app.js"></script>
-</body>
+          <div class="container">
+              <div class="col-sm-6 col-sm-offset-3">
+                  <span class="align-bottom">Team 19 | MSIS Kelley School of Business</span>
+              </div>
+          </div>
+      </footer>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/index.app.js"></script>
+  </body>
 </html>

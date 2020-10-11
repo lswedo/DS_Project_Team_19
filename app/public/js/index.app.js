@@ -1,22 +1,23 @@
 var app = new Vue({
-  el: '#triagePage',
+  el: '#OCFR_tables',
   data: {
-    ptList: [],
-    visitList: [],
-    activePt: null,
-    triageForm: {
-      priority: null,
-      symptoms: ''
-    },
-    newPtForm: {}
+    certList: [],
+    ffList: []
   },
-  methods: {
     created() {
-   fetch("api/records/")
-   .then( response => response.json() )
-   .then( json => {
-     this.ptList = json;
-
-     console.log(json)}
-   );
+     fetch("api/certifications/")
+     .then( response => response.json() )
+     .then( json => {
+       this.certList = json;
+       console.log(json)}
+     );
+     fetch("api/firefighters/")
+     .then( response => response.json() )
+     .then( json => {
+       this.ffList = json;
+       console.log(json)}
+     );
+   },
+  methods: {
+  }
 })
