@@ -32,9 +32,9 @@ INSERT INTO PatientVisit (CertId, CertifyAgency, CertName, ExpPeriod) VALUES
 (1, 'CertifyAgency', 'CertName','ExpPeriod');
 
 CREATE TABLE Per_Cert (
-  PerId  AUTO_INCREMENT,
-  CertId  AUTO_INCREMENT,
-  CertDate DATE
-  FOREIGN KEY (PerId) REFERENCES Person,
-  FOREIGN KEY (CertId) REFERENCES Certification
+  PerId INTEGER,
+  CertId INTEGER,
+  CertDate DATE,
+  FOREIGN KEY (PerId) REFERENCES Person(PerId),
+  FOREIGN KEY (CertId) REFERENCES Certification(CertId)
 );
