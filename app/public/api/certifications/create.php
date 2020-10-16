@@ -8,7 +8,7 @@ $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
   'INSERT INTO Certification (CertifyAgency, CertName, ExpPeriod)
-  VALUES (?,?,?)'
+  VALUES (?,?,?)';
 );
 
 $stmt->execute([

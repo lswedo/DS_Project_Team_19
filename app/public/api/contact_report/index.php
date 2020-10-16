@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT p.fname, p.lname pc.CertDate FROM Per_Cert as pc, Person as p, WHERE CertDate > Current_Date()' p.PerId = pc.PerId;
+$sql = 'SELECT StationNumber, RadioNumber, Email FROM Person ORDER BY StationNumber ASC , RadioNumber ASC';
 $vars = [];
 
 $stmt = $db->prepare($sql);
