@@ -9,6 +9,11 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Certification';
 $vars = [];
 
+if (isset($_GET['CertId'])) {
+  $sql = 'SELECT * FROM Certification WHERE CertId = ?';
+  $vars = [ $_GET['CertId'] ];
+}
+
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 

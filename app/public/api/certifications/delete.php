@@ -6,16 +6,10 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Certification';
-$vars = [];
-
-if (isset($_GET['id'])) {
-  $sql = 'DELETE FROM Certification WHERE CertId = ?';
-  $vars = [ $_GET['id'] ];
-}
-
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
+$stmt = $db->prepare(
+  $sql = 'DELETE FROM Certification WHERE CertId = ?'
+);
+$stmt->execute([ $_POST['CertId'] ]);
 
 $message = $stmt->fetchAll();
 

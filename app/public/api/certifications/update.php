@@ -6,16 +6,8 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Certification';
-$vars = [];
-
-if (isset($_GET['id'])) {
-  $sql = 'UPDATE Certification SET CertifyAgency = ?, CertName = ?, ExpPeriod = ? WHERE CertId=?';
-  $vars = [$_POST['agency'], $_POST['name'], $_POST['expiration'], $_GET['id']];
-}
-
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
+$stmt = $db->prepare($sql = 'UPDATE Certification SET CertifyAgency = ?, CertName = ?, ExpPeriod = ? WHERE CertId=?');
+$stmt->execute([$_POST['CertifyAgency'], $_POST['CertName'], $_POST['ExpPeriod'], $_POST['CertId']]);
 
 $certs = $stmt->fetchAll();
 
@@ -23,7 +15,5 @@ $certs = $stmt->fetchAll();
 $json = json_encode($certs, JSON_PRETTY_PRINT);
 
 // Step 4: Output
-header('HTTP/1.1 303 See Other');
-header('Location: ../certifications/?id=' . $_GET['id']);
-
+header('Content-Type: application/json');
 echo $json;
