@@ -6,13 +6,22 @@ var app = new Vue({
   },
     created() {
      this.get_certs();
-     fetch("api/firefighters/")
+     fetch("api/certifications/")
      .then( response => response.json() )
      .then( json => {
-       this.ffList = json;
+       this.certList = json;
        console.log(json)}
      );
    },
+   created() {
+    this.get_ffs();
+    fetch("api/firefighters/")
+    .then( response => response.json() )
+    .then( json => {
+      this.ffList = json;
+      console.log(json)}
+    );
+  },
   methods: {
     get_certs: function() {
      fetch("api/certifications/")
