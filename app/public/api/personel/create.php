@@ -17,7 +17,5 @@ $stmt->execute([
   $_POST['CertDate']
 ]);
 
-$pk = $db->lastInsertId();
-
 header('HTTP/1.1 303 See Other');
-header('Location: ../personel/?PerId=' . $pk);
+header('Location: ../personel/?PerId=' . $_POST['PerId']);

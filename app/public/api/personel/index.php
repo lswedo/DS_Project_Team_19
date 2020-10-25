@@ -10,6 +10,12 @@ $sql = 'SELECT Person.FirstName, Person.LastName, Certification.CertName, Per_Ce
   Person, Certification  WHERE Person.PerId = Per_Cert.PerId AND Certification.CertId = Per_Cert.CertId';
 $vars = [];
 
+if (isset($_GET['PerId'])) {
+  $sql = 'SELECT Person.FirstName, Person.LastName, Certification.CertName, Per_Cert.CertDate FROM Per_Cert,
+    Person, Certification  WHERE Person.PerId = Per_Cert.PerId AND Certification.CertId = Per_Cert.CertId AND Person.PerId = ?';
+  $vars = [ $_GET['PerId'] ];
+}
+
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 

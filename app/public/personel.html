@@ -34,8 +34,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
                 <li><a href="firefighters.html">Firefighters</a></li>
-                <li><a href="reports.html">Reports</a></li>
                 <li><a href="personel.html">Personel Certifications</a></li>
+                <li><a href="reports.html">Reports</a></li>
                 <li><a href="login.html">Login</a></li>
 
                 </ul>
@@ -74,10 +74,14 @@
         <h2>Enter New Certification For Personel</h2>
         <div style="padding:20px;">
           <form id="perCreate" method="post" v-on:submit.prevent="handleNewCert">
-            <label for="CertifyAgency">Hero ID</label>
-            <input type="text" id="CertifyAgency" name="CertifyAgency" style="width:10%;" v-model="newCertForm.PerId" required></input><br>
-            <label for="CertName">Certification ID:</label>
-            <input type="text" id="CertName" name="CertName"style="width:10%" v-model="newCertForm.CertId" required></input><br>
+            <label for="PerId">Hero:</label>
+            <select id="PerId" name="PerId" v-model="newCertForm.PerId">
+              <option v-for="per in perList" v-bind:value="per.PerId">{{per.FirstName}} {{per.LastName}}</option>
+            </select><br>
+            <label for="CertId">Certification:</label>
+            <select id="CertId" name="CertId" v-model="newCertForm.CertId">
+              <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertName}}</option>
+            </select><br>
             <label for="ExpPeriod">Certification obtained on:</label>
             <input type="date" id="ExpPeriod" name="ExpPeriod"style="width:auto" v-model="newCertForm.CertDate" required></input><br>
             <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: auto; height: auto; margin: auto;" type="submit">Submit New Certification</button><br>
@@ -90,10 +94,14 @@
 <h2>Delete A Certification For Selected Personel</h2>
 <div style="padding:20px;">
   <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert">
-    <label for="CertId">Enter Hero ID to delete</label>
-    <input type="text" id="PertId" name="PertId" style="width:10%" v-model="deleteForm.PerId" required></input><br>
-    <label for="CertId">Enter Certification ID to delete</label>
-    <input type="text" id="CertId" name="CertId" style="width:10%" v-model="deleteForm.CertId" required></input><br>
+    <label for="PerId">Hero to delete:</label>
+    <select id="PerId" name="PerId" v-model="deleteForm.PerId">
+      <option v-for="per in perList" v-bind:value="per.PerId">{{per.FirstName}} {{per.LastName}}</option>
+    </select><br>
+    <label for="CertId">Certification to delete:</label>
+    <select id="CertId" name="CertId" v-model="deleteForm.CertId">
+      <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertName}}</option>
+    </select><br>
     <label for="CertDate">Certification obtained on:</label>
     <input type="date" id="CertDate" name="CertDate" style="width:auto" v-model="deleteForm.CertDate" required></input><br>
 

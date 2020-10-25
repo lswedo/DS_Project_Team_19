@@ -1,7 +1,10 @@
 var app = new Vue({
   el: '#OCFR_tables',
   data: {
-    perList: []
+    perList: [],
+  },
+  created(){
+    this.get_certs();
   },
   methods: {
     get_certs: function() {
@@ -23,9 +26,14 @@ var app = new Vue({
   data: {
     newCertList: [],
     newCertForm: {},
-    new_cert: ''
+    certList: [],
+    perList: [],
+    new_cert: '',
+    cert_to_post: ''
   },
   created() {
+    this.get_certs();
+    this.get_people();
    fetch("api/personel/")
    .then( response => response.json() )
    .then( json => {
@@ -60,9 +68,41 @@ var app = new Vue({
        console.log(this.newCertList);
 
        this.newCertForm = this.newCertData();
-     }
+     },
+   fetchExp(){
+     fetch("api/exp_certs_report/")
+     .then(response => response.json())
+     .then(json => {
+       this.Person=json;
+       console.log(this.Person);
+       });
+     },
+     get_certs(){
+      fetch("api/certifications/")
+      .then( response => response.json() )
+      .then( json => {
+        this.certList = json;
+        console.log(json)}
+      );
+    },
+    get_people(){
+     fetch("api/firefighters/")
+     .then( response => response.json() )
+     .then( json => {
+       this.perList = json;
+       console.log(json)}
+     );
+   },
+    get_a_cert( evt ){
+     console.log(this.Cert_to_Get)
+     fetch("api/exp_certs_report/?CertId="+this.Cert_to_Get)
+     .then( response => response.json() )
+     .then( json => {
+       this.Person=json;
+       console.log(json)}
+     );
     }
-  })
+  }})
 
 
 
@@ -71,8 +111,14 @@ var app = new Vue({
   var app = new Vue({
     el: '#delete_entry',
     data: {
+      certList: [],
+      perList: [],
       deleteForm: {},
       deletedCert: ''
+    },
+    created() {
+      this.get_certs();
+      this.get_people();
     },
     methods: {
       deleteCert( evt ) {
@@ -88,10 +134,25 @@ var app = new Vue({
          console.log(this.deleteForm);
          // TODO: test a result was returned!
          this.deletedCert = "Certification " + this.deleteForm['CertId'] + " obtained on "+ this.deleteForm['CertDate'] +" by firefigther " + this.deleteForm['PerId'] + " Has Been Deleted";
-         
+
        });
 
        console.log("Deleting...!");
-     }
+     },
+     get_certs(){
+      fetch("api/certifications/")
+      .then( response => response.json() )
+      .then( json => {
+        this.certList = json;
+        console.log(json)}
+      );
+    },
+    get_people(){
+     fetch("api/firefighters/")
+     .then( response => response.json() )
+     .then( json => {
+       this.perList = json;
+       console.log(json)}
+     );
     }
-  })
+  }})
