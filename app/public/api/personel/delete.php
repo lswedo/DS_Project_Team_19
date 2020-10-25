@@ -7,9 +7,15 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  $sql = 'DELETE FROM Per_Cert WHERE PerId = ? AND CertId = ? '
+  $sql = 'DELETE FROM Per_Cert WHERE PerId = ? AND CertId = ? AND CertDate = ?'
 );
-$stmt->execute([ $_POST['CertId'] ]);
+
+$stmt->execute([
+  $_POST['PerId'],
+  $_POST['CertId'],
+  $_POST['CertDate']
+]);
+
 
 $message = $stmt->fetchAll();
 

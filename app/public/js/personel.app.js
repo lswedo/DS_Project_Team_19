@@ -87,7 +87,8 @@ var app = new Vue({
        .then( json => {
          console.log(this.deleteForm);
          // TODO: test a result was returned!
-         this.deletedCert = "Certification " + this.deleteForm['CertId']+" Deleted"
+         this.deletedCert = "Certification " + this.deleteForm['CertId'] + " obtained on "+ this.deleteForm['CertDate'] +" by firefigther " + this.deleteForm['PerId'] + " Has Been Deleted";
+         
        });
 
        console.log("Deleting...!");
