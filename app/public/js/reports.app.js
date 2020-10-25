@@ -1,10 +1,13 @@
 var app = new Vue({
   el: '#expCertReport',
   data: {
-    Person: {}
+    certList: [],
+    Person: [],
+    Cert_to_Get: ''
   },
 created() {
-  this.fetchExp()
+  this.fetchExp();
+  this.get_certs();
 },
 methods: {
   fetchExp(){
@@ -14,8 +17,26 @@ methods: {
       this.Person=json;
       console.log(this.Person);
       });
-    }
-}})
+    },
+    get_certs(){
+     fetch("api/certifications/")
+     .then( response => response.json() )
+     .then( json => {
+       this.certList = json;
+       console.log(json)}
+     );
+   },
+   get_a_cert( evt ){
+    console.log(this.Cert_to_Get)
+    fetch("api/exp_certs_report/?CertId="+this.Cert_to_Get)
+    .then( response => response.json() )
+    .then( json => {
+      this.Person=json;
+      console.log(json)}
+    );
+   }
+  }
+})
 
 var app = new Vue({
   el: '#memberReport',
