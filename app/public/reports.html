@@ -45,9 +45,17 @@
         <main class = "row">
 
             <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
+            <form id=expCertReport method="get" v-on:submit.prevent="get_a_cert">
+              <label for="CertId">Choose a certification:</label>
+
+              <select id="CertId" name="CertId" v-model="Cert_to_Get">
+                <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertName}}</option>
+              </select>
+              <br><br>
+              <button class="btn primary" style="background-color: #58ad6c" type="submit">Get Expired Certifications</button>
           <!--    <form id=expCertReport method="get" v-on:submit.prevent="get_reports" style="text-align: center">-->
-<h2> Expired Cerfitifications </h2>
-                <table class="table" id=expCertReport>
+              <h2> Expired Cerfitifications </h2>
+                <table class="table">
                   <thead class="heading">
                     <tr>
                       <th scope="col">First Name</th>
@@ -58,7 +66,7 @@
                       <th scope="col">Expiration Period</th>
                     </tr>
                   </thead>
-                  <tbody id=expCertReportBody>
+                  <tbody>
                     <tr v-for="pers in Person">
                       <th scope="row">{{pers.FirstName}}</th>
                       <td>{{pers.LastName}}</td>
@@ -72,7 +80,7 @@
               <!--</form> -->
 
             </div>
-
+            </form>
             <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
 <h2> Member List </h2>
             <table class="table" id=memberReport>
