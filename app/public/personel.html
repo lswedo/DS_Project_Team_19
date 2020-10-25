@@ -47,16 +47,18 @@
             <table class="table" id=OCFR_tables>
               <thead class="heading">
                 <tr>
-                  <th scope="col">Hero ID</th>
-                  <th scope="col">Certification ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Certification Title</th>
                   <th scope="col">Certification Date</th>
 
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="cert in perList">
-                  <th scope="row">{{cert.PerId}}</th>
-                  <td>{{cert.CertId}}</td>
+                  <th scope="row">{{cert.FirstName}}</th>
+                  <td>{{cert.LastName}}</td>
+                  <td>{{cert.CertName}}</td>
                   <td>{{cert.CertDate}}</td>
 
                 </tr>

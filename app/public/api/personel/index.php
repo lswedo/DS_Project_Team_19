@@ -6,7 +6,8 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Per_Cert';
+$sql = 'SELECT Person.FirstName, Person.LastName, Certification.CertName, Per_Cert.CertDate FROM Per_Cert,
+  Person, Certification WHERE Person.PerId = Per_Cert.PerId';
 $vars = [];
 
 $stmt = $db->prepare($sql);
