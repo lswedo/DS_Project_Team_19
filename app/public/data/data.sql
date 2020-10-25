@@ -17,8 +17,8 @@ CREATE TABLE Person (
     IsActive  VARCHAR(1)
 );
 
-INSERT INTO Patient (PerId,FirstName, LastName, Gender, Address, WorkPhone, MobilePhone, Email, dob, StartDate,RadioNumber,StationNumber,Position,IsActive) VALUES
-(1,"FirstName","LastName", "Gender", "Address", "WorkPhone", "MobilePhone","Email","dob","StartDate","RadioNumber","StationNumber","Position","IsActive"),
+INSERT INTO Person (PerId,FirstName, LastName, Gender, Address, WorkPhone, MobilePhone, Email, dob, StartDate,RadioNumber,StationNumber,Position,IsActive) VALUES
+("FirstName","LastName", "Gender", "Address", "WorkPhone", "MobilePhone","Email","dob","StartDate","RadioNumber","StationNumber","Position","IsActive"),
 
 CREATE TABLE Certification (
     CertId INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -28,8 +28,8 @@ CREATE TABLE Certification (
 
 );
 
-INSERT INTO PatientVisit (CertId, CertifyAgency, CertName, ExpPeriod) VALUES
-(1, 'CertifyAgency', 'CertName','ExpPeriod');
+INSERT INTO Certification (CertId, CertifyAgency, CertName, ExpPeriod) VALUES
+('CertifyAgency', 'CertName','ExpPeriod');
 
 CREATE TABLE Per_Cert (
   PerId INTEGER,
