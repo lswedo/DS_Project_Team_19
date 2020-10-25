@@ -35,7 +35,7 @@ var app = new Vue({
    fetch("api/certifications/")
    .then( response => response.json() )
    .then( json => {
-     this.commentList = json;
+     this.newCertList = json;
      console.log(json)}
      );
    },
