@@ -83,8 +83,6 @@
       <h2>Enter Firefighter</h2>
       <div style="padding:20px;">
         <form id="firefighter_action" method="post" v-on:submit.prevent="handleNewff">
-          <label for="PerId">Enter Person ID to update</label>
-          <input type="number" id="PerId" name="PerId" style="width:5%" v-model="newffForm.PerId" required></input><br>
           <label for="fname">New Person First Name:</label>
           <input type="text" id="fname" name="fname" style="width:20%;" v-model="newffForm.fname" required></input><br>
           <label for="lName">New Person Last Name:</label>
