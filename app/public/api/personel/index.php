@@ -7,7 +7,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $sql = 'SELECT Person.FirstName, Person.LastName, Certification.CertName, Per_Cert.CertDate FROM Per_Cert,
-  Person, Certification WHERE Person.PerId = Per_Cert.PerId';
+  Person, Certification  WHERE Person.PerId = Per_Cert.PerId AND Certification.CertId = Per_Cert.CertId';
 $vars = [];
 
 $stmt = $db->prepare($sql);
