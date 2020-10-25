@@ -83,32 +83,32 @@
       <h2>Enter Firefighter</h2>
       <div style="padding:20px;">
         <form id="firefighter_action" method="post" v-on:submit.prevent="handleNewff">
-          <label for="fname">New Person First Name:</label>
-          <input type="text" id="fname" name="fname" style="width:20%;" v-model="newffForm.fname" required></input><br>
-          <label for="lName">New Person Last Name:</label>
-          <input type="text" id="lname" name="lname"style="width:20%" v-model="newffForm.lname" required></input><br>
-          <label for="gender">New Person Last Name:</label>
-          <input type="text" id="gender" name="gender"style="width:20%" v-model="newffForm.gender" required></input><br>
-          <label for="address">New Person Address:</label>
-          <input type="text" id="address" name="address"style="width:20%" v-model="newffForm.address" required></input><br>
-          <label for="workPhone">New Person Work Phone:</label>
-          <input type="text" id="workPhone" name="workPhone"style="width:20%" v-model="newffForm.workPhone" required></input><br>
-          <label for="mobilePhone">New Person Mobile Phone:</label>
-          <input type="text" id="mobilePhone" name="mobilePhone"style="width:20%" v-model="newffForm.mobilePhone" required></input><br>
-          <label for="email">New Person Email:</label>
-          <input type="text" id="email" name="email"style="width:20%" v-model="newffForm.email" required></input><br>
+          <label for="FirstName">New Person First Name:</label>
+          <input type="text" id="FirstName" name="fname" style="width:20%;" v-model="newffForm.FirstName" required></input><br>
+          <label for="LastName">New Person Last Name:</label>
+          <input type="text" id="LastName" name="LastName"style="width:20%" v-model="newffForm.LastName" required></input><br>
+          <label for="Gender">New Person Gender</label>
+          <input type="text" id="Gender" name="Gender"style="width:20%" v-model="newffForm.Gender" required></input><br>
+          <label for="Address">New Person Address:</label>
+          <input type="text" id="Address" name="Address"style="width:20%" v-model="newffForm.Address" required></input><br>
+          <label for="WorkPhone">New Person Work Phone:</label>
+          <input type="text" id="workPhone" name="WorkPhone"style="width:20%" v-model="newffForm.WorkPhone" required></input><br>
+          <label for="MobilePhone">New Person Mobile Phone:</label>
+          <input type="text" id="MobilePhone" name="MobilePhone"style="width:20%" v-model="newffForm.MobilePhone" required></input><br>
+          <label for="Email">New Person Email:</label>
+          <input type="text" id="Email" name="Email"style="width:20%" v-model="newffForm.Email" required></input><br>
           <label for="dob">New Person Dob:</label>
           <input type="date" id="dob" name="dob"style="width:20%" v-model="newffForm.dob" required></input><br>
-          <label for="startDate">New Person Start Date:</label>
-          <input type="date" id="startdate" name="startdate"style="width:20%" v-model="newffForm.startDate" required></input><br>
-          <label for="radio">New Person Radio:</label>
-          <input type="text" id="radio" name="radio"style="width:20%" v-model="newffForm.radio" required></input><br>
-          <label for="station">New Person Station:</label>
-          <input type="text" id="station" name="station"style="width:20%" v-model="newffForm.station" required></input><br>
-          <label for="position">New Person Position:</label>
-          <input type="text" id="position" name="position"style="width:20%" v-model="newffForm.position" required></input><br>
-          <label for="isActive">New Person Is Active:</label>
-          <input type="text" id="isActive" name="isActive"style="width:20%" v-model="newffForm.isActive" required></input><br>
+          <label for="StartDate">New Person Start Date:</label>
+          <input type="date" id="StartDate" name="StartDate"style="width:20%" v-model="newffForm.StartDate" required></input><br>
+          <label for="RadioNumber">New Person Radio:</label>
+          <input type="text" id="RadioNumber" name="RadioNumber"style="width:20%" v-model="newffForm.RadioNumber" required></input><br>
+          <label for="StationNumber">New Person Station:</label>
+          <input type="text" id="StationNumber" name="StationNumber"style="width:20%" v-model="newffForm.StationNumber" required></input><br>
+          <label for="Position">New Person Position:</label>
+          <input type="text" id="Position" name="Position"style="width:20%" v-model="newffForm.Position" required></input><br>
+          <label for="IsActive">New Person Is Active:</label>
+          <input type="text" id="IsActive" name="IsActive"style="width:20%" v-model="newffForm.IsActive" required></input><br>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Submit New Person</button>
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{new_ff}}</p>
         </form>
@@ -119,7 +119,7 @@
           <label for="PerId">Enter Person ID to delete</label>
           <input type="number" id="PerId" name="PerId" style="width:5%" v-model="deleteForm_ff.PerId" required></input><br>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Delete Person</button>
-          <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{deletedCert}}</p>
+          <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{deletedff}}</p>
         </form>
       </div>
       <h2>Update Person</h2>

@@ -12,22 +12,22 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST[fname],
-  $_POST[lname],
-  $_POST[gender],
-  $_POST[address],
-  $_POST[workPhone],
-  $_POST[mobilePhone],
-  $_POST[email],
-  $_POST[dob],
-  $_POST[startDate],
-  $_POST[radio],
-  $_POST[station],
-  $_POST[position],
-  $_POST[isActive]
+  $_POST['FirstName'],
+  $_POST['LastName'],
+  $_POST['Gender'],
+  $_POST['Address'],
+  $_POST['WorkPhone'],
+  $_POST['MobilePhone'],
+  $_POST['Email'],
+  $_POST['dob'],
+  $_POST['StartDate'],
+  $_POST['RadioNumber'],
+  $_POST['StationNumber'],
+  $_POST['Position'],
+  $_POST['IsActive']
 ]);
 
 $pk = $db->lastInsertId();
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../comment/?PerId=' . $pk);
+header('Location: ../firefighters/?PerId=' . $pk);
