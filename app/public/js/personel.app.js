@@ -5,7 +5,7 @@ var app = new Vue({
   },
   methods: {
     get_certs: function() {
-     fetch("api/certifications/")
+     fetch("api/personel/")
      .then( response => response.json() )
      .then( json => {
        this.perList = json;
