@@ -45,7 +45,28 @@
         <main class = "row">
 
             <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12 " >
-                <h3> This is where our reports go!</h3>
+              <form id=OCFR_tables method="get" v-on:submit.prevent="get_certs" style="text-align: center">
+
+                <table class="table" id=OCFR_tables>
+                  <thead class="heading">
+                    <tr>
+                      <th scope="col">Certification ID</th>
+                      <th scope="col">Agengy</th>
+                      <th scope="col">Certification Title</th>
+                      <th scope="col">Expiration Period</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="cert in certList">
+                      <th scope="row">{{cert.CertId}}</th>
+                      <td>{{cert.CertifyAgency}}</td>
+                      <td>{{cert.CertName}}</td>
+                      <td>{{cert.ExpPeriod}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button id="OCFR_tables" class="btn primary" style="background-color: #58ad6c" type="submit">Refresh Table</button>
+              </form>
 
 
 
@@ -65,5 +86,6 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/reports.app.js"></script>
 </body>
 </html>
