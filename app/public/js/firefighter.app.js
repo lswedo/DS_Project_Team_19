@@ -27,7 +27,7 @@ var app = new Vue({
 
 //Firefighter JavaScript
 var app = new Vue({
-  el: '#Firefighter_action',
+  el: '#firefighter_action',
   data: {
     newffList: [],
     newffForm: {},
@@ -37,7 +37,7 @@ var app = new Vue({
    fetch("api/firefighters/")
    .then( response => response.json() )
    .then( json => {
-     this.commentList = json;
+     this.ffList = json;
      console.log(json)}
      );
    },
@@ -60,7 +60,7 @@ var app = new Vue({
          console.log("Returned from post:", json[0]);
          // TODO: test a result was returne
          this.newffList.push(json[0]);
-         this.new_ff = "Person " + json[0]['PerId']+" submitted as: '" + json[0]['fname'] + "' From Agency: " + json[0]['CertifyAgency']
+         this.new_ff = "Id Number " + json[0]['PerId']+" submitted as: '" + json[0]['FirstName']
        });
 
        console.log("Creating (POSTing)...!");
@@ -116,7 +116,7 @@ var app = new Vue({
      .then( json => {
        console.log(this.updateForm_ff);
        // TODO: test a result was returned!
-       this.updatedff = "Person " + this.updateForm_ff['PerId']+" updatedas: '" + this.updateForm_ff['fName'] + "' From Agency: " + this.updateForm_ff['CertifyAgency']
+       this.updatedff = "Person " + this.updateForm_ff['PerId']+" updatedas: '" + this.updateForm_ff['FirstName']
      });
 
      console.log("Updating...!");
