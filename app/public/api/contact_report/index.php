@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT StationNumber, RadioNumber, Email FROM Person ORDER BY StationNumber ASC , RadioNumber ASC';
+$sql = 'SELECT FirstName, LastName, StationNumber, RadioNumber, Email FROM Person ORDER BY StationNumber ASC , RadioNumber ASC';
 $vars = [];
 
 $stmt = $db->prepare($sql);
@@ -15,7 +15,7 @@ $stmt->execute($vars);
 $patients = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($members, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
