@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Welcome!</title>
+    <title>Personel Certifications</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -42,13 +42,30 @@
              </div>
         </nav>
 
-        <form class="form-signin" style="background-color: whitesmoke; width: 35%; margin: auto;">
-          <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
-          <input type="text" id="user_name" class="form-control" placeholder="User Name" required="" autofocus="">
-          <label for="Password" class="sr-only">Password</label>
-          <input type="password" id="Password" class="form-control" placeholder="Password" required="">
-          <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 35%; margin: auto;" type="submit">Sign in</button>
-        </form>
+        <main class = "row">
+          <form id=OCFR_tables method="get" v-on:submit.prevent="get_certs" style="text-align: center">
+            <table class="table" id=OCFR_tables>
+              <thead class="heading">
+                <tr>
+                  <th scope="col">Hero ID</th>
+                  <th scope="col">Certification ID</th>
+                  <th scope="col">Certification Date</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="cert in perList">
+                  <th scope="row">{{cert.PerId}}</th>
+                  <td>{{cert.CertId}}</td>
+                  <td>{{cert.CertDate}}</td>
+
+                </tr>
+              </tbody>
+            </table>
+            <button id="OCFR_tables" class="btn primary" style="background-color: #58ad6c" type="submit">Refresh Table</button>
+          </form>
+        </main>
+
 
       <footer class = "row">
             <div class="container">
@@ -60,5 +77,6 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/personel.app.js"></script>
 </body>
 </html>
