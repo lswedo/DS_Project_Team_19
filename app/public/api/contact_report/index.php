@@ -12,7 +12,7 @@ $vars = [];
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$patients = $stmt->fetchAll();
+$members = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
 $json = json_encode($members, JSON_PRETTY_PRINT);
