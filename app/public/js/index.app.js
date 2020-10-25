@@ -30,7 +30,17 @@ var app = new Vue({
        this.certList = json;
        console.log(json)}
      );
-    }
+   }
+ },
+  methods: {
+    get_ffs: function() {
+     fetch("api/firefighters/")
+     .then( response => response.json() )
+     .then( json => {
+       this.ffList = json;
+       console.log(json)}
+     );
+   }
   }
 })
 var app = new Vue({
