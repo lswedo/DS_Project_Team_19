@@ -1,15 +1,14 @@
 var app = new Vue({
   el: '#OCFR_tables',
   data: {
-    certList: [],
-    ffList: []
+    certList: []
   },
     created() {
      this.get_certs();
-     fetch("api/firefighters/")
+     fetch("api/certifications/")
      .then( response => response.json() )
      .then( json => {
-       this.ffList = json;
+       this.certList = json;
        console.log(json)}
      );
    },
@@ -21,8 +20,8 @@ var app = new Vue({
        this.certList = json;
        console.log(json)}
      );
-    }
-  }
+   }
+ },
 })
 var app = new Vue({
   el: '#Certification_action',

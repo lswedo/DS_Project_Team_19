@@ -30,4 +30,4 @@ $stmt->execute([
 $pk = $db->lastInsertId();
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../comment/?id=' . $pk);
+header('Location: ../comment/?PerId=' . $pk);

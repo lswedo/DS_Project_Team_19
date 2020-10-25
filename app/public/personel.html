@@ -68,6 +68,44 @@
           </form>
         </main>
 
+<!--- Create  --------->
+
+
+        <h2>Enter New Certification For Personel</h2>
+        <div style="padding:20px;">
+          <form id="perCreate" method="post" v-on:submit.prevent="handleNewCert">
+            <label for="CertifyAgency">Hero ID</label>
+            <input type="text" id="CertifyAgency" name="CertifyAgency" style="width:10%;" v-model="newCertForm.PerId" required></input><br>
+            <label for="CertName">Certification ID:</label>
+            <input type="text" id="CertName" name="CertName"style="width:10%" v-model="newCertForm.CertId" required></input><br>
+            <label for="ExpPeriod">Certification obtained on:</label>
+            <input type="date" id="ExpPeriod" name="ExpPeriod"style="width:auto" v-model="newCertForm.CertDate" required></input><br>
+            <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: auto; height: auto; margin: auto;" type="submit">Submit New Certification</button><br>
+            <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{new_cert}}</p>
+          </form>
+        </div>
+
+<!--- Delete  --------->
+
+<h2>Delete A Certification For Selected Personel</h2>
+<div style="padding:20px;">
+  <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert">
+    <label for="CertId">Enter Hero ID to delete</label>
+    <input type="text" id="PertId" name="PertId" style="width:10%" v-model="deleteForm.PerId" required></input><br>
+    <label for="CertId">Enter Certification ID to delete</label>
+    <input type="text" id="CertId" name="CertId" style="width:10%" v-model="deleteForm.CertId" required></input><br>
+    <label for="CertDate">Certification obtained on:</label>
+    <input type="date" id="CertDate" name="CertDate" style="width:auto" v-model="deleteForm.CertDate" required></input><br>
+
+    <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: auto; margin: auto;" type="submit">Delete Certification</button> <br>
+
+
+    <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{deletedCert}}</p>
+  </form>
+</div>
+
+
+<!---   --------->
 
       <footer class = "row">
             <div class="container">

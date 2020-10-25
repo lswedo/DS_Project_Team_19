@@ -6,16 +6,16 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Person';
-$vars = [];
+$stmt = $db->prepare(
+  $sql = 'DELETE FROM Per_Cert WHERE PerId = ? AND CertId = ? AND CertDate = ?'
+);
 
-if (isset($_GET['id'])) {
-  $sql = 'DELETE FROM Person WHERE PerId = ?';
-  $vars = [ $_GET['PerId'] ];
-}
+$stmt->execute([
+  $_POST['PerId'],
+  $_POST['CertId'],
+  $_POST['CertDate']
+]);
 
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
 
 $message = $stmt->fetchAll();
 

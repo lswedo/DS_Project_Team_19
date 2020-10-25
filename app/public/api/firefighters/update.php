@@ -9,7 +9,7 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Person';
 $vars = [];
 
-if (isset($_GET['id'])) {
+if (isset($_GET['PerId'])) {
   $sql = 'UPDATE Person
     SET FirstName =?,
     LastName =?,
@@ -53,6 +53,6 @@ $json = json_encode($firefighters, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../certifications/?id=' . $_GET['PerId']);
+header('Location: ../certifications/?PerId=' . $_GET['PerId']);
 
 echo $json;
