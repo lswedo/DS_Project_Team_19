@@ -60,12 +60,12 @@
                   </thead>
                   <tbody id=expCertReportBody>
                     <tr v-for="pers in Person">
-                      <th scope="row">{{Person.FirstName}}</th>
-                      <td>{{Person.LastName}}</td>
-                      <td>{{Per_Cert.CertDate}}</td>
-                      <td>{{Certification.CertId}}</td>
-                      <td>{{Certification.CertName}}</td>
-                      <td>{{Certification.ExpPeriod}}</td>
+                      <th scope="row">{{pers.FirstName}}</th>
+                      <td>{{pers.LastName}}</td>
+                      <td>{{pers.CertDate}}</td>
+                      <td>{{pers.CertID}}</td>
+                      <td>{{pers.CertName}}</td>
+                      <td>{{pers.ExpPeriod}}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -87,11 +87,11 @@
               </thead>
               <tbody id=expCertReportBody>
                 <tr v-for="pers in Person">
-                  <th scope="row">{{Person.FirstName}}</th>
-                  <td>{{Person.LastName}}</td>
-                  <td>{{Certification.RadioNumber}}</td>
-                  <td>{{Certification.StationNumber}}</td>
-                  <td>{{Certification.Email}}</td>
+                  <th scope="row">{{pers.FirstName}}</th>
+                  <td>{{pers.LastName}}</td>
+                  <td>{{pers.RadioNumber}}</td>
+                  <td>{{pers.StationNumber}}</td>
+                  <td>{{pers.Email}}</td>
                 </tr>
               </tbody>
             </table>

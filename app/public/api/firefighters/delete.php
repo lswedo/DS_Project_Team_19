@@ -11,7 +11,7 @@ $vars = [];
 
 if (isset($_GET['id'])) {
   $sql = 'DELETE FROM Person WHERE PerId = ?';
-  $vars = [ $_GET['id'] ];
+  $vars = [ $_GET['PerId'] ];
 }
 
 $stmt = $db->prepare($sql);
