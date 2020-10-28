@@ -156,3 +156,21 @@ var app = new Vue({
      );
     }
   }})
+
+  var app = new Vue({
+    el: '#login_check',
+    data: {
+      login_status: ''
+    },
+    created() {
+      this.get_status();
+    },
+    methods: {
+      get_status() {
+      fetch("api/login/check.php")
+      .then( response => response.json() )
+      .then( json => {
+        this.login_status = json['message'];
+        console.log(json)}
+      );
+    }}})

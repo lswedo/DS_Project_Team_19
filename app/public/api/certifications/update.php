@@ -1,5 +1,10 @@
 <?php
-
+session_start();
+require 'common.php';
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: /login.html");
+    exit;
+}
 require 'common.php';
 
 // Step 1: Get a datase connection from our helper class

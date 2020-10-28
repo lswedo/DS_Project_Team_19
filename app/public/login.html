@@ -12,6 +12,7 @@
       href="Images/ocfr_favicon.png">
 
 </head>
+<div id=login_check method="get"> {{login_status}} </div>
 <body>
 
 
@@ -42,12 +43,18 @@
              </div>
         </nav>
 
-        <form class="form-signin" style="background-color: whitesmoke; width: 35%; margin: auto;">
+        <form id = login class="form-signin" v-on:submit.prevent="verify" style="background-color: whitesmoke; width: 35%; margin: auto;">
           <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
-          <input type="text" id="user_name" class="form-control" placeholder="User Name" required="" autofocus="">
+          <input type="text" id="Username" class="form-control" placeholder="User Name" required="" autofocus="" v-model="login_info.Username">
           <label for="Password" class="sr-only">Password</label>
-          <input type="password" id="Password" class="form-control" placeholder="Password" required="">
-          <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 35%; margin: auto;" type="submit">Sign in</button>
+          <input type="Password" id="Password" class="form-control" placeholder="Password" required="" v-model="login_info.Password">
+          <button class="btn btn-lg btn-primary btn-block" style="background-color:Green;  width: 35%; margin: auto;" type="submit">Sign in</button>
+          <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{login_response}}</p>
+          <a href="register.html" style="color:Blue;" >Register</a>
+        </form>
+        <form id = logout class="form-signin" v-on:submit.prevent="perform_logout" style="background-color: whitesmoke; width: 35%; margin: auto;">
+          <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 35%; margin: auto;" type="submit">Log Out</button>
+          <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{logout_response}}</p>
         </form>
 
       <footer class = "row">
@@ -60,5 +67,6 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/login.app.js"></script>
 </body>
 </html>

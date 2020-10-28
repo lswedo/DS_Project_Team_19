@@ -12,7 +12,7 @@
       href="Images/ocfr_favicon.png">
 
 </head>
-  <div id=login_check method="get"> {{login_status}} </div>
+<div id=login_check method="get"> {{login_status}} </div>
 <body>
 
 
@@ -42,22 +42,14 @@
                 </ul>
              </div>
         </nav>
-
-        <main class = "row">
-
-            <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12 " >
-                <img src="Images/home_page_image.PNG" class = "img-responsive" width = 400 alt = "Fire_Rescue"> </div>
-
-                 <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-                     <h3><a href=https://www.oconeecounty.com/753/Fire-Rescue-News>Click here</a> to learn more about OCFR! </h3>
-
-
-
-            </div>
-
-
-
-        </main>
+        <form id = create_user class="form-signin" v-on:submit.prevent="register" style="background-color: whitesmoke; width: 35%; margin: auto;">
+          <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+          <input type="text" id="Register_Username" class="form-control" placeholder="User Name" required="" autofocus="" v-model="createForm.Register_Username">
+          <label for="Register_Password" class="sr-only">Password</label>
+          <input type="Password" id="Register_Password" class="form-control" placeholder="Password" required="" v-model="createForm.Register_Password">
+          <button class="btn btn-lg btn-primary btn-block" style="background-color:Yellow; color:Black;  width: 35%; margin: auto;" type="submit">Register</button>
+          <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{create_response}}</p>
+        </form>
 
       <footer class = "row">
             <div class="container">
@@ -69,5 +61,6 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/login.app.js"></script>
 </body>
 </html>
