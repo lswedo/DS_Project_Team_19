@@ -10,8 +10,9 @@
       <link rel="icon"
         type="image/png"
         href="Images/ocfr_favicon.png">
+      <div id=login_check method="get" v-html='redirect'></div>
   </head>
-    <div id=login_check method="get"> {{login_status}} </div>
+    <div id=get_login_status method="get"> {{login_status}} </div>
   <body>
     <div class = "container">
       <header class = "row">

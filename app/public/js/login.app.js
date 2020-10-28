@@ -24,7 +24,8 @@ var app = new Vue({
 var app = new Vue({
   el: '#login_check',
   data: {
-    login_status: ''
+    login_status: '',
+    redirect: ''
   },
   created() {
     this.get_status();
@@ -35,6 +36,7 @@ var app = new Vue({
     .then( response => response.json() )
     .then( json => {
       this.login_status = json['message'];
+      this.redirect = json['redirect'];
       console.log(json)}
     );
   }}})
@@ -77,3 +79,20 @@ var app = new Vue({
    }
   }
 })
+var app = new Vue({
+  el: '#get_login_status',
+  data: {
+    login_status: ''
+  },
+  created() {
+    this.get_status();
+  },
+  methods: {
+    get_status() {
+    fetch("api/login/check.php")
+    .then( response => response.json() )
+    .then( json => {
+      this.login_status = json['message'];
+      console.log(json)}
+    );
+  }}})
