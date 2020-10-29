@@ -75,7 +75,11 @@ var app = new Vue({
   el: '#delete_entry_ff',
   data: {
     deleteForm_ff: {},
-    deletedff: ''
+    deletedff: '',
+    ffList: []
+  },
+  created() {
+   this.get_ffs();
   },
   methods: {
     deleteff( evt ) {
@@ -94,14 +98,25 @@ var app = new Vue({
      });
 
      console.log("Deleting...!");
-   }
-  }
-})
+   },
+  get_ffs() {
+   fetch("api/firefighters/")
+   .then( response => response.json() )
+   .then( json => {
+     this.ffList = json;
+     console.log(json)}
+   );
+ }
+}})
 var app = new Vue({
   el: '#update_entry_ff',
   data: {
     updateForm_ff: {},
-    updatedff: ''
+    updatedff: '',
+    ffList: []
+  },
+  created() {
+   this.get_ffs();
   },
   methods: {
     updateff( evt ) {
@@ -120,9 +135,24 @@ var app = new Vue({
      });
 
      console.log("Updating...!");
-   }
-  }
-})
+   },
+  get_ffs() {
+   fetch("api/firefighters/")
+   .then( response => response.json() )
+   .then( json => {
+     this.ffList = json;
+     console.log(json)}
+   );
+ },
+ changeff() {
+  fetch("api/firefighters/?PerId="+this.updateForm_ff.PerId)
+  .then( response => response.json() )
+  .then( json => {
+    this.updateForm_ff = json[0];
+    console.log(json)}
+  );
+}
+}})
 
 var app = new Vue({
   el: '#login_check',
