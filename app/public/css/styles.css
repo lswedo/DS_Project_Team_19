@@ -10,7 +10,7 @@
 body {background-color: whitesmoke;
         color: black;
         font-family: fantasy;
-    text-align: center
+
         }
 
 
@@ -29,12 +29,7 @@ body {background-color: whitesmoke;
 
             }
 
-        input {
-  width: 100%;
-  padding: 5px 20px;
-  margin: 2px 0;
-  box-sizing: border-box;
-              }
+
 
 
 
@@ -91,9 +86,8 @@ padding: 5px;
             color: white;
         }
 
-
-input {
-    width: 150%;
-    padding: 2px;
-  margin: 4px 0;
-}
+label {
+         display: inline-block;
+         width: 140px;
+         text-align: right;
+       }​

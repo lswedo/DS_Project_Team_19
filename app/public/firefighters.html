@@ -82,9 +82,19 @@
         </form>
         </div>
       </main>
+      <style>
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 110px;
+        color: black;
+      }
+      </style>
       <h2>Enter Firefighter</h2>
       <div style="padding:20px;">
-        <form id="firefighter_action" method="post" v-on:submit.prevent="handleNewff">
+        <form id="firefighter_action" method="post" v-on:submit.prevent="handleNewff" style="text-align: center">
           <label for="FirstName">New Person First Name:</label>
           <input type="text" id="FirstName" name="fname" style="width:20%;" v-model="newffForm.FirstName" required></input><br>
           <label for="LastName">New Person Last Name:</label>
@@ -111,11 +121,11 @@
           <input type="text" id="Position" name="Position"style="width:20%" v-model="newffForm.Position" required></input><br>
           <label for="IsActive">New Person Is Active:</label>
           <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%;" id="IsActive" value="Y" v-model="newffForm.IsActive" checked>
-            <label class="form-check-label" for="exampleRadios1" style="padding-right:5em;">
+            <label class="form-check-label" for="exampleRadios1" style="padding-right:10em;">
               Yes
             </label>
           <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%" id="IsActive" value="N" v-model="newffForm.IsActive">
-            <label class="form-check-label" for="exampleRadios2">
+            <label class="form-check-label" for="exampleRadios2" style="padding-right:10em;">
               No
             </label>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Submit New Person</button>
@@ -124,7 +134,7 @@
       </div>
       <h2>Delete A Person</h2>
       <div style="padding:20px;">
-        <form id="delete_entry_ff" method="post" v-on:submit.prevent="deleteff">
+        <form id="delete_entry_ff" method="post" v-on:submit.prevent="deleteff" style="text-align: center">
           <label for="PerId">Enter Person ID to delete</label>
           <input type="number" id="PerId" name="PerId" style="width:5%"v-model="deleteForm_ff.PerId" required></input><br>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Delete Person</button>
@@ -133,7 +143,7 @@
       </div>
       <h2>Update Person</h2>
       <div style="padding:20px;">
-        <form id="update_entry_ff" method="post" v-on:submit.prevent="updateff">
+        <form id="update_entry_ff" method="post" v-on:submit.prevent="updateff" style="text-align: center">
           <label for="PerId">Enter Person ID to update</label>
           <input type="number" id="PerId" name="PerId" style="width:5%" v-model="updateForm_ff.PerId" required></input><br>
           <label for="FirstName">Update Person First Name:</label>
@@ -160,13 +170,13 @@
           <input type="text" id="StationNumber" name="StationNumber"style="width:20%" v-model="updateForm_ff.StationNumber" required></input><br>
           <label for="Position">Update Person Position:</label>
           <input type="text" id="Position" name="Position"style="width:20%" v-model="updateForm_ff.Position" required></input><br>
-          <label for="IsActive">New Person Is Active:</label>
+          <label for="IsActive">Update Person Is Active:</label>
           <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%;" id="IsActive" value="Y" v-model="updateForm_ff.IsActive" checked>
-            <label class="form-check-label" for="exampleRadios1" style="padding-right:5em;">
+            <label class="form-check-label" for="exampleRadios1" style="padding-right:10em;">
               Yes
             </label>
           <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%" id="IsActive" value="N" v-model="updateForm_ff.IsActive">
-            <label class="form-check-label" for="exampleRadios2">
+            <label class="form-check-label" for="exampleRadios2" style="padding-right:10em;" >
               No
             </label>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Person</button>
