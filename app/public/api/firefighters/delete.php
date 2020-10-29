@@ -13,9 +13,9 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Person';
 $vars = [];
 
-if (isset($_GET['id'])) {
+if (isset($_POST['PerId'])) {
   $sql = 'DELETE FROM Person WHERE PerId = ?';
-  $vars = [ $_GET['PerId'] ];
+  $vars = [ $_POST['PerId'] ];
 }
 
 $stmt = $db->prepare($sql);

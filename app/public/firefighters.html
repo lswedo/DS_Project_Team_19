@@ -110,7 +110,14 @@
           <label for="Position">New Person Position:</label>
           <input type="text" id="Position" name="Position"style="width:20%" v-model="newffForm.Position" required></input><br>
           <label for="IsActive">New Person Is Active:</label>
-          <input type="text" id="IsActive" name="IsActive"style="width:20%" v-model="newffForm.IsActive" required></input><br>
+          <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%;" id="IsActive" value="Y" v-model="newffForm.IsActive" checked>
+            <label class="form-check-label" for="exampleRadios1" style="padding-right:5em;">
+              Yes
+            </label>
+          <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%" id="IsActive" value="N" v-model="newffForm.IsActive">
+            <label class="form-check-label" for="exampleRadios2">
+              No
+            </label>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Submit New Person</button>
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{new_ff}}</p>
         </form>
@@ -119,7 +126,7 @@
       <div style="padding:20px;">
         <form id="delete_entry_ff" method="post" v-on:submit.prevent="deleteff">
           <label for="PerId">Enter Person ID to delete</label>
-          <input type="number" id="PerId" name="PerId" style="width:5%" v-model="deleteForm_ff.PerId" required></input><br>
+          <input type="number" id="PerId" name="PerId" style="width:5%"v-model="deleteForm_ff.PerId" required></input><br>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Delete Person</button>
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{deletedff}}</p>
         </form>
@@ -133,7 +140,7 @@
           <input type="text" id="FirstName" name="FirstName" style="width:20%;" v-model="updateForm_ff.FirstName" required></input><br>
           <label for="LastName">New Person Last Name:</label>
           <input type="text" id="LastName" name="LastName"style="width:20%" v-model="updateForm_ff.LastName" required></input><br>
-          <label for="Gender">New Person Last Name:</label>
+          <label for="Gender">New Person Gender:</label>
           <input type="text" id="Gender" name="Gender"style="width:20%" v-model="updateForm_ff.Gender" required></input><br>
           <label for="Address">New Person Address:</label>
           <input type="text" id="Address" name="Address"style="width:20%" v-model="updateForm_ff.Address" required></input><br>
@@ -154,7 +161,14 @@
           <label for="Position">New Person Position:</label>
           <input type="text" id="Position" name="Position"style="width:20%" v-model="updateForm_ff.Position" required></input><br>
           <label for="IsActive">New Person Is Active:</label>
-          <input type="text" id="IsActive" name="IsActive"style="width:20%" v-model="updateForm_ff.IsActive" required></input><br>
+          <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%;" id="IsActive" value="Y" v-model="updateForm_ff.IsActive" checked>
+            <label class="form-check-label" for="exampleRadios1" style="padding-right:5em;">
+              Yes
+            </label>
+          <input class="form-check-input" type="radio" name="exampleRadios" style="width:3%" id="IsActive" value="N" v-model="updateForm_ff.IsActive">
+            <label class="form-check-label" for="exampleRadios2">
+              No
+            </label>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Person</button>
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{updatedff}}</p>
         </form>

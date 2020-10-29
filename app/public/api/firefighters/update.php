@@ -13,7 +13,7 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Person';
 $vars = [];
 
-if (isset($_GET['PerId'])) {
+if (isset($_POST['PerId'])) {
   $sql = 'UPDATE Person
     SET FirstName =?,
     LastName =?,
@@ -42,8 +42,8 @@ if (isset($_GET['PerId'])) {
     $_POST['RadioNumber'],
     $_POST['StationNumber'],
     $_POST['Position'],
-    $_POST['IsActive']
-    $_GET['PerId']
+    $_POST['IsActive'],
+    $_POST['PerId']
   ];
 }
 
@@ -57,6 +57,6 @@ $json = json_encode($firefighters, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../firefighters/?PerId=' . $_GET['PerId']);
+header('Location: ../firefighters/?PerId=' . $_POST['PerId']);
 
 echo $json;

@@ -12,6 +12,11 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Person';
 $vars = [];
 
+if (isset($_GET['PerId'])) {
+  $sql = 'SELECT * FROM Person WHERE PerId = ?';
+  $vars = [ $_GET['PerId'] ];
+}
+
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
