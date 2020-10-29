@@ -61,6 +61,8 @@ table {
 tbody {
     font-family: sans-serif;
 }
+
+th {text-align:center;}
 /*tr{
     border: 1px solid black;}*/
 
