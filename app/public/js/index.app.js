@@ -5,12 +5,6 @@ var app = new Vue({
   },
     created() {
      this.get_certs();
-     fetch("api/certifications/")
-     .then( response => response.json() )
-     .then( json => {
-       this.certList = json;
-       console.log(json)}
-     );
    },
   methods: {
     get_certs: function() {
@@ -72,7 +66,11 @@ var app = new Vue({
   el: '#delete_entry',
   data: {
     deleteForm: {},
-    deletedCert: ''
+    deletedCert: '',
+    certList: []
+  },
+  created() {
+   this.get_certs();
   },
   methods: {
     deleteCert( evt ) {
@@ -91,14 +89,25 @@ var app = new Vue({
      });
 
      console.log("Deleting...!");
-   }
+   },
+   get_certs() {
+    fetch("api/certifications/")
+    .then( response => response.json() )
+    .then( json => {
+      this.certList = json;
+      console.log(json)}
+    );
   }
-})
+}})
 var app = new Vue({
   el: '#update_entry',
   data: {
     updateForm: {},
-    updatedCert: ''
+    updatedCert: '',
+    certList: []
+  },
+  created() {
+   this.get_certs();
   },
   methods: {
     updateCert( evt ) {
@@ -117,9 +126,24 @@ var app = new Vue({
      });
 
      console.log("Updating...!");
-   }
-  }
-})
+   },
+   get_certs() {
+    fetch("api/certifications/")
+    .then( response => response.json() )
+    .then( json => {
+      this.certList = json;
+      console.log(json)}
+    );
+  },
+  changeCert() {
+   fetch("api/certifications/?CertId="+this.updateForm.CertId)
+   .then( response => response.json() )
+   .then( json => {
+     this.updateForm = json[0];
+     console.log(json)}
+   );
+ }
+}})
 
 var app = new Vue({
   el: '#login_check',

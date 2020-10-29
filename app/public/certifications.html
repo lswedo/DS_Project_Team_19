@@ -89,7 +89,9 @@
       <div style="padding:20px;">
         <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert" style="text-align: center">
           <label for="CertId">Enter Certification ID to delete</label>
-          <input type="number" id="CertId" name="CertId" style="width:5%" v-model="deleteForm.CertId" required></input><br>
+          <select id="CertId" name="CertId" v-model="deleteForm.CertId">
+            <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertId}}</option>
+          </select><br>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Delete Certification</button>
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{deletedCert}}</p>
         </form>
@@ -98,7 +100,9 @@
       <div style="padding:20px;">
         <form id="update_entry" method="post" v-on:submit.prevent="updateCert" style="text-align: center">
           <label for="CertId">Enter Certification ID to update</label>
-          <input type="number" id="CertId" name="CertId" style="width:5%" v-model="updateForm.CertId" required></input><br>
+          <select id="CertId" name="CertId" v-model="updateForm.CertId" @change="changeCert">
+            <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertId}}</option>
+          </select><br>
           <label for="CertifyAgency">New Certification Agengy:</label>
           <input type="text" id="CertifyAgency" name="CertifyAgency" style="width:20%;" v-model="updateForm.CertifyAgency" required></input><br>
           <label for="CertName">New Certification Name:</label>
