@@ -62,9 +62,19 @@
           <button id="OCFR_tables" class="btn primary" style="background-color: #58ad6c" type="submit">Refresh Table</button>
         </form>
       </main>
+      <style>
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 110px;
+        color: black;
+      }
+      </style>
       <h2>Enter Certification</h2>
       <div style="padding:20px;">
-        <form id="Certification_action" method="post" v-on:submit.prevent="handleNewCert">
+        <form id="Certification_action" method="post" v-on:submit.prevent="handleNewCert" style="text-align: center">
           <label for="CertifyAgency">Certification Agengy:</label>
           <input type="text" id="CertifyAgency" name="CertifyAgency" style="width:20%;" v-model="newCertForm.CertifyAgency" required></input><br>
           <label for="CertName">Certification Name:</label>
@@ -77,7 +87,7 @@
       </div>
       <h2>Delete A Certification</h2>
       <div style="padding:20px;">
-        <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert">
+        <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert" style="text-align: center">
           <label for="CertId">Enter Certification ID to delete</label>
           <input type="number" id="CertId" name="CertId" style="width:5%" v-model="deleteForm.CertId" required></input><br>
           <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: 20%; margin: auto;" type="submit">Delete Certification</button>
@@ -86,7 +96,7 @@
       </div>
       <h2>Update Certification</h2>
       <div style="padding:20px;">
-        <form id="update_entry" method="post" v-on:submit.prevent="updateCert">
+        <form id="update_entry" method="post" v-on:submit.prevent="updateCert" style="text-align: center">
           <label for="CertId">Enter Certification ID to update</label>
           <input type="number" id="CertId" name="CertId" style="width:5%" v-model="updateForm.CertId" required></input><br>
           <label for="CertifyAgency">New Certification Agengy:</label>
