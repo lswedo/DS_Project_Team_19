@@ -12,7 +12,7 @@
       href="Images/ocfr_favicon.png">
 <div id=login_check method="get" v-html='redirect'></div>
 </head>
-  <div id=get_login_status method="get"> {{login_status}} </div>
+  <div id=get_login_status method="get" style="text-align: center;"> {{login_status}} </div>
 <body>
 
 
@@ -44,7 +44,7 @@
         </nav>
 
         <main class = "row">
-          <form id=OCFR_tables method="get" v-on:submit.prevent="get_certs">
+          <form id=OCFR_tables method="get" v-on:submit.prevent="get_certs" style="text-align: center">
             <table class="table" id=OCFR_tables>
               <thead class="heading">
                 <tr>
@@ -76,38 +76,36 @@
         <div style="padding:20px;">
           <form id="perCreate" method="post" v-on:submit.prevent="handleNewCert">
             <label for="PerId">Hero:</label>
-            <select id="PerId" name="PerId" style="width:20%" v-model="newCertForm.PerId">
+            <select id="PerId" name="PerId" v-model="newCertForm.PerId">
               <option v-for="per in perList" v-bind:value="per.PerId">{{per.FirstName}} {{per.LastName}}</option>
             </select><br>
             <label for="CertId">Certification:</label>
-            <select id="CertId" name="CertId" style="width:20%" v-model="newCertForm.CertId">
+            <select id="CertId" name="CertId" v-model="newCertForm.CertId">
               <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertName}}</option>
             </select><br>
             <label for="ExpPeriod">Certification obtained on:</label>
-            <input type="date" id="ExpPeriod" name="ExpPeriod" style="width:20%" v-model="newCertForm.CertDate" required></input><br>
-<br>
+            <input type="date" id="ExpPeriod" name="ExpPeriod"style="width:auto" v-model="newCertForm.CertDate" required></input><br>
             <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: auto; height: auto; margin: auto;" type="submit">Submit New Certification</button><br>
             <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{new_cert}}</p>
           </form>
         </div>
-
 
 <!--- Delete  --------->
 
 <h2>Delete A Certification For Selected Personel</h2>
 <div style="padding:20px;">
   <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert">
-    <label for="PerId">Hero:</label>
-    <select id="PerId" name="PerId" style="width:20%" v-model="deleteForm.PerId">
+    <label for="PerId">Hero to delete:</label>
+    <select id="PerId" name="PerId" v-model="deleteForm.PerId">
       <option v-for="per in perList" v-bind:value="per.PerId">{{per.FirstName}} {{per.LastName}}</option>
     </select><br>
-    <label for="CertId">Certification:</label>
-    <select id="CertId" name="CertId" style="width:20%" v-model="deleteForm.CertId">
+    <label for="CertId">Certification to delete:</label>
+    <select id="CertId" name="CertId" v-model="deleteForm.CertId">
       <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertName}}</option>
     </select><br>
     <label for="CertDate">Certification obtained on:</label>
-    <input type="date" id="CertDate" name="CertDate" style="width:20%" style="width:auto" v-model="deleteForm.CertDate" required></input><br>
-<br>
+    <input type="date" id="CertDate" name="CertDate" style="width:auto" v-model="deleteForm.CertDate" required></input><br>
+
     <button class="btn btn-lg btn-primary btn-block" style="background-color:darkred;  width: auto; margin: auto;" type="submit">Delete Certification</button> <br>
 
 
