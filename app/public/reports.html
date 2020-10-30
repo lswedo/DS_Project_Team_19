@@ -48,12 +48,11 @@
             <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 " >
             <form id=expCertReport method="get" v-on:submit.prevent="get_a_cert">
               <label for="CertId">Choose a certification:</label>
-
-              <select id="CertId" name="CertId" v-model="Cert_to_Get">
+              <select id="CertId" name="CertId" v-model="Cert_to_Get" @change="get_a_cert">
+                <option value="all">All</option>
                 <option v-for="cert in certList" v-bind:value="cert.CertId">{{cert.CertName}}</option>
               </select>
               <br><br>
-              <button class="btn primary" style="background-color: #58ad6c" type="submit">Get Expired Certifications</button>
           <!--    <form id=expCertReport method="get" v-on:submit.prevent="get_reports" style="text-align: center">-->
               <h2> Expired Cerfitifications </h2>
                 <table class="table">

@@ -16,10 +16,16 @@ $sql = 'SELECT Person.FirstName, Person.LastName, Per_Cert.CertDate, Certificati
 $vars = [date("Y-m-d")];
 
 if (isset($_GET['CertId'])) {
-
-  $sql = 'SELECT Person.FirstName, Person.LastName, Per_Cert.CertDate, Certification.CertID, Certification.CertName, Per_Cert.ExpDate FROM Per_Cert,
-    Person, Certification WHERE Person.PerId = Per_Cert.PerId AND Certification.CertID = Per_Cert.CertID AND Per_Cert.ExpDate < ? AND Certification.CertID = ?';
-  $vars = [ date("Y-m-d"), $_GET['CertId'] ];
+  if ($_GET['CertId'] === 'all'){
+    $sql = 'SELECT Person.FirstName, Person.LastName, Per_Cert.CertDate, Certification.CertID, Certification.CertName, Per_Cert.ExpDate FROM Per_Cert,
+      Person, Certification WHERE Person.PerId = Per_Cert.PerId AND Certification.CertID = Per_Cert.CertID AND Per_Cert.ExpDate < ?';
+    $vars = [date("Y-m-d")];
+  }
+  else{
+    $sql = 'SELECT Person.FirstName, Person.LastName, Per_Cert.CertDate, Certification.CertID, Certification.CertName, Per_Cert.ExpDate FROM Per_Cert,
+      Person, Certification WHERE Person.PerId = Per_Cert.PerId AND Certification.CertID = Per_Cert.CertID AND Per_Cert.ExpDate < ? AND Certification.CertID = ?';
+    $vars = [ date("Y-m-d"), $_GET['CertId'] ];
+  }
 }
 
 $stmt = $db->prepare($sql);
