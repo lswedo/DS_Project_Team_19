@@ -44,7 +44,7 @@
         </nav>
 
         <main class = "row">
-          <form id=OCFR_tables method="get" v-on:submit.prevent="get_certs" style="text-align: center">
+          <form id=OCFR_tables method="get" v-on:submit.prevent="get_certs" >
             <table class="table" id=OCFR_tables>
               <thead class="heading">
                 <tr>
@@ -72,7 +72,7 @@
 <!--- Create  --------->
 
 
-        <h2 style="text-align: center">Enter New Certification For Personel</h2>
+        <h2 >Enter New Certification For Personel</h2>
         <div style="padding:20px;">
           <form id="perCreate" method="post" v-on:submit.prevent="handleNewCert">
             <label for="PerId">Hero:</label>
@@ -92,7 +92,7 @@
 
 <!--- Delete  --------->
 
-<h2 style="text-align: center">Delete A Certification For Selected Personel</h2>
+<h2 >Delete A Certification For Selected Personel</h2>
 <div style="padding:20px;">
   <form id="delete_entry" method="post" v-on:submit.prevent="deleteCert">
     <label for="PerId">Hero to delete:</label>

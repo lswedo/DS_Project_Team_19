@@ -83,7 +83,7 @@
         </div>
       </main>
 
-      <h2 style="text-align: center">Enter New Firefighter</h2>
+      <h2>Enter New Firefighter</h2>
       <div style="padding:20px;">
         <form id="firefighter_action" method="post" v-on:submit.prevent="handleNewff">
           <label for="FirstName">New Person First Name:</label>
@@ -123,7 +123,7 @@
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{new_ff}}</p>
         </form>
       </div>
-      <h2 style="text-align: center" >Delete A Person</h2>
+      <h2 >Delete A Person</h2>
       <div style="padding:20px;">
         <form id="delete_entry_ff" method="post" v-on:submit.prevent="deleteff" >
           <label for="PerId">Enter Person ID to delete</label>
@@ -135,7 +135,7 @@
           <p style="color: #58ad6c; text-align: center; padding-bottom:20px;">{{deletedff}}</p>
         </form>
       </div>
-      <h2 style="text-align: center">Update Person</h2>
+      <h2 >Update Person</h2>
       <div style="padding:20px;">
         <form id="update_entry_ff" method="post" v-on:submit.prevent="updateff">
           <label for="PerId">Enter Person ID to update</label>
